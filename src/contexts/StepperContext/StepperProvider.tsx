@@ -1,15 +1,14 @@
-import React, { createContext, useReducer } from 'react';
-import { StepperReducer } from './StepperReducer';
-import type { StateStepper, ActionStepper, StepperContextType } from '@/types/stepper';
+import React, { createContext } from 'react';
+import type { StateStepper } from '@/types/stepper';
 
-interface PropsSteeperContext{
+interface PropsSteeperContext {
   children: React.ReactNode;
   value: StateStepper;
 }
 
-const StepperContext = createContext<StateStepper|null>(null);
+const StepperContext = createContext<StateStepper | null>(null);
 
-const StepperProvider = (props:PropsSteeperContext) => {
+const StepperProvider = (props: PropsSteeperContext) => {
   return (
     <StepperContext.Provider value={props.value}>
       {props.children}
@@ -18,4 +17,3 @@ const StepperProvider = (props:PropsSteeperContext) => {
 };
 
 export { StepperContext, StepperProvider };
-
