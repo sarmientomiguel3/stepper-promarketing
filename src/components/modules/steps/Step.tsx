@@ -11,7 +11,7 @@ const Step = (props: PropsStep) => {
   if (props.index === null) return <p>Loading ...</p>;
   return (
     <div onClick={() => props.onClick()}>
-      <StepState index={props.index} />
+      <StepState index={props.index}>{props.children}</StepState>
     </div>
   );
 };

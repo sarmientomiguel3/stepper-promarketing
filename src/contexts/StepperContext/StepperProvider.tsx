@@ -11,7 +11,7 @@ const StepperContext = createContext<StateStepper | null>(null);
 const StepperProvider = (props: PropsSteeperContext) => {
   return (
     <StepperContext.Provider value={props.value}>
-      {props.children}
+      <div className="relative flex flex-row">{props.children}</div>
     </StepperContext.Provider>
   );
 };

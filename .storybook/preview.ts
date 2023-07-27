@@ -17,7 +17,7 @@ const preview: Preview = {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Introduction'],
+        order: ['Introduction', 'REA'],
         locales: 'en-US',
       },
     },

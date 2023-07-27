@@ -16,9 +16,27 @@ const LineStepInactive = () => {
 const LineStepNone = () => {
   return (
     <div
-      className="items-center justify-center w-[180px] h-[3px] bg-gray-200 -ml-0.5 -mr-0.5 z-0"
+      className="items-center justify-center w-[180px] h-[3px] bg-white -ml-0.5 -mr-0.5 z-0"
       style={{ backgroundColor: '#FFFFFF' }}
     ></div>
   );
 };
-export { LineStepActive, LineStepInactive, LineStepNone };
+
+type stateLine = 'none' | 'active' | 'inactive';
+interface PropsLine {
+  state: stateLine;
+}
+const LineStep = (props: PropsLine) => {
+  let styleLine: string = '';
+  if (props.state === 'none')
+    styleLine =
+      'items-center justify-center w-auto h-[3px] -ml-0.5 -mr-0.5 z-0';
+  if (props.state === 'active')
+    styleLine =
+      'items-center justify-center w-auto h-[3px] -ml-0.5 -mr-0.5 z-0 bg-green-200';
+  if (props.state === 'inactive')
+    styleLine =
+      'items-center justify-center w-auto h-[3px] bg-gray-200 -ml-0.5 -mr-0.5 z-0';
+  return <div className={`${styleLine}`}></div>;
+};
+export { LineStep, LineStepActive, LineStepInactive, LineStepNone };

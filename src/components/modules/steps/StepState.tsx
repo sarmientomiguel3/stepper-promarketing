@@ -4,26 +4,20 @@ import {
   LineStepInactive,
   LineStepNone,
 } from '@/components/elements/lines/LineStep';
-import {
-  FontStepActive,
-  FontStepInactive,
-  FontStepDefault,
-} from '@/components/elements/fonts/FontStep';
-import {
-  IconStepActive,
-  IconStepInactive,
-  IconStepDefault,
-} from '@/components/elements/icons/IconStep';
+import { FontStep as FontStepGeneral } from '@/components/elements/fonts/FontStep';
+import { IconStep as IconStepGeneral } from '@/components/elements/icons/IconStep';
 import { StepperContext } from '@/contexts/StepperContext/StepperProvider';
 
 interface PropsStepState {
   index: number | undefined;
+  children: React.ReactNode;
 }
 
 interface PropsData {
   stateStep: number;
   isFirst: boolean;
   isLast: boolean;
+  children: React.ReactNode;
 }
 
 const LineStepBefore = (props: PropsData) => {
@@ -43,16 +37,38 @@ const LineStepAfter = (props: PropsData) => {
 };
 
 const IconStep = (props: PropsData) => {
-  if (props.stateStep === 0) return <IconStepActive />;
-  if (props.stateStep < 0) return <IconStepInactive />;
-  if (props.stateStep > 0) return <IconStepDefault />;
+  if (props.stateStep === 0)
+    return <IconStepGeneral state={'active'}>{props.children}</IconStepGeneral>;
+  if (props.stateStep < 0)
+    return (
+      <IconStepGeneral state={'inactive'}>{props.children}</IconStepGeneral>
+    );
+  if (props.stateStep > 0)
+    return (
+      <IconStepGeneral state={'default'}>{props.children}</IconStepGeneral>
+    );
   else return <></>;
 };
 
 const FontStep = (props: PropsData) => {
-  if (props.stateStep === 0) return <FontStepDefault />;
-  if (props.stateStep < 0) return <FontStepInactive />;
-  if (props.stateStep > 0) return <FontStepActive />;
+  if (props.stateStep === 0)
+    return (
+      <FontStepGeneral state={'default'} isLast={props.isLast}>
+        {props.children}
+      </FontStepGeneral>
+    );
+  if (props.stateStep < 0)
+    return (
+      <FontStepGeneral state={'inactive'} isLast={props.isLast}>
+        {props.children}
+      </FontStepGeneral>
+    );
+  if (props.stateStep > 0)
+    return (
+      <FontStepGeneral state={'active'} isLast={props.isLast}>
+        {props.children}
+      </FontStepGeneral>
+    );
   else return <></>;
 };
 
@@ -65,6 +81,7 @@ const StepState = (props: PropsStepState) => {
     stateStep: stateStep,
     isFirst: isFirst,
     isLast: isLast,
+    children: props.children,
   };
   if (stepper === null) {
     return <p>Loading...</p>;
