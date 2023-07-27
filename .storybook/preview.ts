@@ -1,5 +1,9 @@
 import type { Preview } from '@storybook/react';
 import '../src/app/globals.css';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
 
 const preview: Preview = {
   parameters: {
@@ -13,11 +17,10 @@ const preview: Preview = {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Introduction', 'Configure', 'Avatar'],
+        order: ['Introduction'],
         locales: 'en-US',
-      }
-
-    }
+      },
+    },
   },
 };
 
