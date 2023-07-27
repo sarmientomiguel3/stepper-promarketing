@@ -13,9 +13,6 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } satisfies Meta<typeof FontStep>;
 
 export default meta;
@@ -26,20 +23,23 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     state: 'default',
-    message: 'Syrp',
+    isLast: true,
+    children: 44,
   },
 };
 
 export const Active: Story = {
   args: {
     state: 'active',
-    message: 'Syrp',
+    isLast: true,
+    children: 44,
   },
 };
 
 export const Inactive: Story = {
   args: {
     state: 'inactive',
-    message: 'Syrp',
+    isLast: true,
+    children: 44,
   },
 };

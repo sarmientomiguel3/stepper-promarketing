@@ -3,6 +3,8 @@ import type { StoryObj } from '@storybook/react';
 import { StepState } from './../../../components/modules/steps/StepState';
 import { StepperProvider } from './../../../contexts/StepperContext/StepperProvider';
 
+type Story = StoryObj<typeof StepState>;
+
 const meta = {
   title: 'Example/Step',
   component: StepState,
@@ -10,7 +12,7 @@ const meta = {
     (Story: React.ReactNode) => {
       return (
         <StepperProvider value={{ activeStep: 0, maxStep: 4 }}>
-          <Story />
+          {Story}
         </StepperProvider>
       );
     },
@@ -25,7 +27,6 @@ const meta = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
 export const Primero: Story = {
   args: {
     index: 0,
