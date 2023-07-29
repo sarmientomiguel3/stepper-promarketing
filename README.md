@@ -37,6 +37,6 @@ El proyecto corre por el puerto 6006
 ## Contenedor
 
 ```
-docker pull jazzblack/prueba-promarketing
-docker run -d -p 3000:4025 -p 6006:6006 --name prueba jazzblack/promarketing:2.0
+docker pull jazzblack/prueba-promarketing:v1.0
+docker run -d -p 3000:4025 -p 6006:6006 --name prueba jazzblack/promarketing:v1.0
 ```

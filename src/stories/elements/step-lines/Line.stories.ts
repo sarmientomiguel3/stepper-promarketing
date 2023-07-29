@@ -15,21 +15,18 @@ type Story = StoryObj<typeof LineStep>;
 
 export const None: Story = {
   args: {
-    label: 'LineStep',
     state: 'none',
   },
 };
 
 export const Active: Story = {
   args: {
-    label: 'LineStep',
     state: 'active',
   },
 };
 
 export const Inactive: Story = {
   args: {
-    label: 'LineStep',
     state: 'inactive',
   },
 };
