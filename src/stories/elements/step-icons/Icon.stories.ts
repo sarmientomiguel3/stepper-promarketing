@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { IconStep } from '@/components/elements/icons/IconStep';
-import { PropsIcon } from '@/components/elements/icons/IconStep';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof IconStep> = {
