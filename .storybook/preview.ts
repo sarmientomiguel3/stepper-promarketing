@@ -1,11 +1,13 @@
-import type { Preview } from '@storybook/react';
+import type { Preview, Story } from '@storybook/react';
 import '../src/app/globals.css';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
+import { withMaxWidth } from './decorators';
 
 const preview: Preview = {
+  decorators: [withMaxWidth],
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
