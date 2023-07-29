@@ -21,17 +21,18 @@ interface PropsData {
 }
 
 const LineStepBefore = (props: PropsData) => {
+  console.log('lines', props);
   if (props.isFirst) return <LineStepNone />;
-  if (props.stateStep < 0) return <LineStepInactive />;
   if (props.stateStep === 0) return <LineStepActive />;
+  if (props.stateStep < 0) return <LineStepInactive />;
   if (props.stateStep > 0) return <LineStepActive />;
   else return <></>;
 };
 
 const LineStepAfter = (props: PropsData) => {
   if (props.isLast) return <LineStepNone />;
-  if (props.stateStep < 0) return <LineStepInactive />;
   if (props.stateStep === 0) return <LineStepInactive />;
+  if (props.stateStep < 0) return <LineStepInactive />;
   if (props.stateStep > 0) return <LineStepActive />;
   else return <></>;
 };

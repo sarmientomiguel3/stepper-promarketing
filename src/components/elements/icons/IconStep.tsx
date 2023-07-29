@@ -64,3 +64,4 @@ const IconStep = (props: PropsIcon) => {
 };
 
 export { IconStep, IconStepActive, IconStepInactive, IconStepDefault };
+export type { PropsIcon };
